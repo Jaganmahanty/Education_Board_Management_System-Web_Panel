@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_web_panel/insert_data.dart';
-import 'package:flutter_application_web_panel/student_data.dart';
+import 'package:flutter_application_web_panel/unverified_student_data.dart';
+import 'package:flutter_application_web_panel/verified_student_data.dart';
 
 // ignore: camel_case_types
 class home_page extends StatefulWidget {
@@ -49,11 +50,23 @@ class _home_pageState extends State<home_page> {
             ),
             ListTile(
               leading: const Icon(Icons.settings),
-              title: const Text('Student Data'),
+              title: const Text('Unverified Student Data'),
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const student_data()),
+                  MaterialPageRoute(
+                      builder: (context) => const unverifiedStudentData()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Verified Student Data'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const VerifiedStudentData()),
                 );
               },
             ),
